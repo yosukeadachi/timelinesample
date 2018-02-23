@@ -5,69 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TimeLineSample by Y.A.</title>
-    <link rel='stylesheet' href='/timelinesample/stylesheets/timeline.css' />
+    <link rel='stylesheet' href='stylesheets/timeline.css' />
 </head>
 <body>
+    <div id="vueApp">
     <div class="timeline">
-        <div class="entry">
-          <div class="title">
-            <h3>2/24 10:00</h3>
-            <p>Title, Company</p>
-          </div>
-          <div class="body">
-            <hr>
-            <p>Voluptatibus veniam ea reprehenderit atque reiciendis non laborum adipisci ipsa pariatur omnis.</p>
-            <ul>
-              <li>Rerum sit libero possimus amet excepturi</li>
-              <li>Exercitationem enim dolores sunt praesentium dolorum praesentium</li>
-              <li>Modi aut dolores dignissimos sequi sit ut aliquid molestias deserunt illo</li>
-            </ul>
-            <hr>
-          </div>
+        <div class="entry" v-for="entry in entries">
+            <div class="title">
+                <h3>{{ entry.datetime }}</h3>
+            </div>
+            <div class="body">
+                <p>{{ entry.name1Written }}</p>
+                <hr>
+                <span v-for="cate in entry.category">{{ cate }}|</span>
+                <p>{{ entry.descs }}</p>
+            </div>
         </div>
-        <div class="entry">
-          <div class="title">
-            <h3>2010 - Present</h3>
-            <p>Title, Company</p>
-          </div>
-          <div class="body">
-            <p>Voluptatibus veniam ea reprehenderit atque reiciendis non laborum adipisci ipsa pariatur omnis.</p>
-            <ul>
-              <li>Rerum sit libero possimus amet excepturi</li>
-              <li>Exercitationem enim dolores sunt praesentium dolorum praesentium</li>
-              <li>Modi aut dolores dignissimos sequi sit ut aliquid molestias deserunt illo</li>
-            </ul>
-          </div>
-        </div>
-        <div class="entry">
-          <div class="title">
-            <h3>2009 - 2010</h3>
-            <p>Title, Company</p>
-          </div>
-          <div class="body">
-            <p>Voluptatibus veniam ea reprehenderit atque reiciendis non laborum adipisci ipsa pariatur omnis.</p>
-            <ul>
-              <li>Rerum sit libero possimus amet excepturi</li>
-              <li>Exercitationem enim dolores sunt praesentium dolorum praesentium</li>
-              <li>Modi aut dolores dignissimos sequi sit ut aliquid molestias deserunt illo</li>
-            </ul>
-          </div>
-        </div>
-        <div class="entry">
-          <div class="title">
-            <h3>2006 - 2008</h3>
-            <p>Title, Company</p>
-          </div>
-          <div class="body">
-            <p>Voluptatibus veniam ea reprehenderit atque reiciendis non laborum adipisci ipsa pariatur omnis.</p>
-            <ul>
-              <li>Rerum sit libero possimus amet excepturi</li>
-              <li>Exercitationem enim dolores sunt praesentium dolorum praesentium</li>
-              <li>Modi aut dolores dignissimos sequi sit ut aliquid molestias deserunt illo</li>
-            </ul>
-          </div>
-        </div>
-      
-    </div>    
+    </div>
+    </div>
+    <script src="javascripts/vue.min.js"></script>
+    <script src="javascripts/data.js"></script>
 </body>
 </html>
